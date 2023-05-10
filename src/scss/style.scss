@@ -1,0 +1,451 @@
+// Переменные с цветами
+$color-white: #ffffff;
+$color-blue: #3a68b8;
+$container-color: #020a18;
+
+@mixin footElems() {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  ul > li {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 0.6;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//Подключение шрифтов
+@font-face {
+  font-family: "OpenSans";
+  src: url(../fonts/OpenSans-Light.ttf);
+  font-weight: regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-weight: regular;
+  scroll-behavior: smooth;
+  a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  background-color: $container-color;
+  user-select: none;
+}
+
+.main-container {
+  color: $color-white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .main-container__header {
+    max-width: 1400px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    margin-top: 21px;
+    margin-bottom: 22px;
+    margin-right: 15px;
+  }
+
+  .main-container__name {
+    color: $color-blue;
+    font-size: 23px;
+    line-height: 31px;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: 36px;
+    margin-right: 84px;
+  }
+
+  .main-container__nav-menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-menu-item {
+    margin-right: 39px;
+    margin-top: 30px;
+    height: 30px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    &:last-child {
+      margin-right: 116px;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 5px 2px grey;
+    }
+    &:active {
+      transform: translateY(5px);
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  .header-btn {
+    text-align: center;
+    color: $color-white;
+    background-color: $color-blue;
+    border: 1px solid;
+    width: 112px;
+    height: 52px;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 5px;
+    margin-top: 24px;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      box-shadow: 0 0 5px 2px grey;
+      cursor: pointer;
+    }
+    &:active {
+      transform: translateY(5px);
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  #about {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    .about-description {
+      width: 754px;
+      margin-right: 114px;
+      &-slogan {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 55px;
+        line-height: 130%;
+        color: #3a68b8;
+        margin-left: 128px;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-top: 160px;
+        margin-bottom: 10px;
+      }
+      &-text {
+        margin-left: 128px;
+        font-size: 55px;
+        margin-bottom: 40px;
+      }
+      &-subtext {
+        width: 600px;
+        margin-left: 128px;
+        line-height: 160%;
+        font-size: 18px;
+        margin-bottom: 40px;
+        font-weight: 600px;
+        opacity: 0.7;
+      }
+      &-btns {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 128px;
+        text-align: center;
+        button {
+          width: 171px;
+          height: 57px;
+          background-color: $color-blue;
+          border-radius: 5px;
+          font-size: 20px;
+          color: $color-white;
+          margin-right: 20px;
+          padding-bottom: 9px;
+          &:last-child {
+            width: 217px;
+            height: 57px;
+            margin-right: 0;
+            padding-bottom: 9px;
+          }
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 5px 2px grey;
+          }
+        }
+      }
+      &-play {
+        position: absolute;
+        left: 205px;
+      }
+    }
+  }
+
+  .about-image {
+    margin-bottom: 89px;
+    transition: 0.7s ease-in-out;
+    &:hover {
+      transform: translateY(-12px) translateX(-10px);
+      transition: 0.7s ease-in-out;
+    }
+  }
+
+  #logos {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 200px;
+    p {
+      border-radius: 10px;
+      margin-right: 72px;
+      padding: 10px;
+      transition: 0.5s ease-in-out;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 7px 3px grey;
+        transform: translateY(-5px);
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .blog {
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    &-image {
+      transition: 0.7s ease-in-out;
+      width: 725px;
+      height: 669px;
+      margin-right: 68px;
+      margin-bottom: 200px;
+      &:hover {
+        transform: translateY(-10px) translateX(10px);
+        transition: 0.7s ease-in-out;
+      }
+    }
+    &-description {
+      display: flex;
+      flex-direction: column;
+    }
+    &-description-text {
+      width: 560px;
+      font-size: 40px;
+      line-height: 130%;
+      margin-bottom: 30px;
+      margin-top: 170px;
+    }
+    &-description-subtext {
+      margin-bottom: 50px;
+      width: 500px;
+      line-height: 160%;
+      opacity: 0.7;
+    }
+    &-description-btn {
+      width: 170px;
+      font-size: 16px;
+      color: $color-white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      background-color: $color-blue;
+    }
+  }
+
+  .reviews {
+    width: 1146px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 170px;
+    .reviews-description {
+      display: flex;
+      flex-direction: column;
+      .reviews-description-text {
+        width: 548px;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 130%;
+        margin-bottom: 40px;
+      }
+      .reviews-description-subtext {
+        width: 460px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 160%;
+        opacity: 0.7;
+        margin-bottom: 20px;
+        margin-right: 44px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .reviews-image {
+      margin-top: -40px;
+      transition: 0.7s ease-in-out;
+      &:hover {
+        transform: translateY(-12px);
+        transition: 0.7s ease-in-out;
+      }
+    }
+  }
+
+  footer {
+    width: 1146px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      img {
+        margin-left: 2px;
+      }
+      &-name {
+        color: $color-blue;
+        margin-top: 8px;
+        margin-bottom: 10px;
+      }
+      &-text1 {
+        width: 261px;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 18px;
+        opacity: 0.6;
+        margin-bottom: 37px;
+      }
+      &-mail,
+      &-phone,
+      &-adress {
+        width: 261px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 168px;
+        }
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+}
+.information,
+.footer-menu,
+.useful-links {
+  @include footElems();
+}
+
+.about-the-store {
+  width: 261px;
+
+  .title {
+    margin-bottom: 32px;
+    margin-top: 15px;
+  }
+  &-text {
+    font-style: normal;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 0.6;
+    margin-bottom: 20px;
+  }
+  &-site {
+    margin-bottom: 20px;
+  }
+}
+
+.footer-icons {
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+  ul li {
+    margin-right: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* Стили для кнопки */
+.dropbtn {
+  margin-top: 20px;
+  background-color: $color-blue;
+  border-radius: 15px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Стили для контейнера с выпадающим меню */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Стили для ссылок в меню */
+.dropdown-content a {
+  color: $color-white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* Стиль для ссылок при наведении */
+.dropdown-content a:hover {
+  background-color: $color-blue;
+}
+
+/* Показ выпадающего меню при наведении на кнопку */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Скрытие меню при клике вне его */
+@media (max-width: 480px) and (min-width: 320px) {
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+}
