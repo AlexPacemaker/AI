@@ -21,8 +21,8 @@ $container-color: #020a18;
 @font-face {
   font-family: "OpenSans";
   src: url(../fonts/OpenSans-Light.ttf);
-  font-weight: regular;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -30,11 +30,11 @@ $container-color: #020a18;
   src: url(../fonts/OpenSans-Bold.ttf);
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 html {
   font-family: "Open Sans", sans-serif;
-  font-weight: regular;
   scroll-behavior: smooth;
   a {
     text-decoration: none;
@@ -49,6 +49,7 @@ html {
   user-select: none;
 }
 
+//стили основного контейнера
 .main-container {
   color: $color-white;
   overflow: hidden;
@@ -63,12 +64,14 @@ html {
     justify-content: space-between;
   }
 
+  //стили лого
   .header-logo {
     margin-top: 21px;
     margin-bottom: 22px;
     margin-right: 15px;
   }
 
+  //стили названия
   .main-container__name {
     color: $color-blue;
     font-size: 23px;
@@ -79,6 +82,7 @@ html {
     margin-right: 84px;
   }
 
+  //навигационное меню
   .main-container__nav-menu {
     display: flex;
     justify-content: space-between;
@@ -105,6 +109,7 @@ html {
     }
   }
 
+  //стили кнопки подпишись
   .header-btn {
     text-align: center;
     color: $color-white;
@@ -129,6 +134,7 @@ html {
     }
   }
 
+  //стили первого раздела
   #about {
     max-width: 1400px;
     margin: 0 auto;
@@ -160,7 +166,6 @@ html {
         line-height: 160%;
         font-size: 18px;
         margin-bottom: 40px;
-        font-weight: 600px;
         opacity: 0.7;
       }
       &-btns {
@@ -169,7 +174,8 @@ html {
         align-items: flex-start;
         margin-left: 128px;
         text-align: center;
-        button {
+        transition: 0.3s ease-in-out;
+        a {
           width: 171px;
           height: 57px;
           background-color: $color-blue;
@@ -177,16 +183,22 @@ html {
           font-size: 20px;
           color: $color-white;
           margin-right: 20px;
+          padding-top: 20px;
           padding-bottom: 9px;
           &:last-child {
             width: 217px;
             height: 57px;
             margin-right: 0;
+            padding-top: 0;
             padding-bottom: 9px;
           }
           &:hover {
             cursor: pointer;
             box-shadow: 0 0 5px 2px grey;
+          }
+          &:active {
+            transform: translateY(5px);
+            transition: 0.3s ease-in-out;
           }
         }
       }
@@ -194,6 +206,33 @@ html {
         position: absolute;
         left: 205px;
       }
+    }
+
+    .watch_video {
+      background-color: $color-blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      position: relative;
+      &-text {
+        background-color: $color-blue;
+        padding-top: 20px;
+        margin-left: 20px;
+      }
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 22px solid white;
+      transform: rotate(90deg);
+      background-color: $color-blue;
+      position: absolute;
+      top: 18px;
+      left: 20px;
     }
   }
 
@@ -206,6 +245,7 @@ html {
     }
   }
 
+  //стили раздела Логос
   #logos {
     max-width: 1400px;
     margin: 0 auto;
@@ -228,16 +268,19 @@ html {
     }
   }
 
+  //раздел блог
   .blog {
     width: 1400px;
     margin: 0 auto;
     display: flex;
+    margin-bottom: 170px;
+    transition: 0.3s ease-in-out;
     &-image {
       transition: 0.7s ease-in-out;
       width: 725px;
       height: 669px;
       margin-right: 68px;
-      margin-bottom: 200px;
+
       &:hover {
         transform: translateY(-10px) translateX(10px);
         transition: 0.7s ease-in-out;
@@ -267,9 +310,63 @@ html {
       padding: 15px 30px;
       border-radius: 5px;
       background-color: $color-blue;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 5px 2px grey;
+      }
+      &:active {
+        transform: translateY(5px);
+        transition: 0.3s ease-in-out;
+      }
     }
   }
 
+  //раздел достижения
+  .achievments {
+    margin-bottom: 170px;
+    .achievments-container {
+      width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      .achievments-card {
+        width: 322px;
+        height: 359px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        padding: 15px;
+        transition: 0.5s ease-in-out;
+        &:hover {
+          border-radius: 15px;
+          box-shadow: 0 0 15px 5px $color-blue;
+          cursor: pointer;
+          transform: translateY(-8px);
+          transition: 0.5s ease-in-out;
+        }
+        .achievments-img {
+          width: 88px;
+          height: 93px;
+          margin-left: 72px;
+          margin-bottom: 40px;
+        }
+        .achievments-title {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 125%;
+          opacity: 0.7;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+        .achievments-text {
+          text-align: center;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  //раздел отзывы
   .reviews {
     width: 1146px;
     margin: 0 auto;
@@ -310,6 +407,7 @@ html {
     }
   }
 
+  //стили футера
   footer {
     width: 1146px;
     margin: 0 auto;
@@ -407,7 +505,7 @@ html {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* Стили для контейнера с выпадающим меню */

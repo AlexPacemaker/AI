@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="./js/index.js" type="module" defer></script>
+    <script src="./js/index.js" type="module"></script>
     <meta name="description" content="AI" />
     <title>AI</title>
   </head>
   <body>
-    <!-- Первая секция -->
+    <!-- Первая секция: Нав.меню -->
+
     <main class="main-container">
       <header class="main-container__header">
         <a class="header-logo" href="#"
@@ -28,8 +29,10 @@
         </ul>
         <p class="btn header-btn">Sign In</p>
       </header>
-       <!-- Вторая секция -->
-      <section id="about">
+
+      <!-- Вторая секция: About -->
+
+      <div id="about">
         <div class="about-description">
           <h3 class="about-description-slogan">Next generation platform</h3>
           <p class="about-description-text">
@@ -40,39 +43,39 @@
             and publishing industries for previewing layouts and visual mockups.
           </p>
           <div class="about-description-btns">
-            <button>Get Started</button>
-            <button>
-              <a href="#s">
-                <img
-                  class="about-description-play"
-                  src="./Img/play.svg"
-                  alt="play"
-                  width="27px"
-                  height="26px"
-              /></a>
-              Watch video
-            </button>
+            <a href="#S">Get Started</a>
+            <div class="watch_video">
+              <a href="#s" target="_blank"
+                ><p class="triangle"></p>
+                <p class="watch_video-text">Watch video</p>
+              </a>
+            </div>
           </div>
         </div>
         <div class="about-image">
           <img
             src="./Img/hero.svg"
             alt="it-scientist"
-            width="632px"
-            height="634px"
+            width="632"
+            height="634"
           />
         </div>
-      </section>
-       <!-- Третья секция -->
-      <section id="logos">
+      </div>
+
+      <!-- Третья секция: Logos -->
+
+      <div id="logos">
         <p><img src="./Img/logo1.svg" alt="logo" /></p>
         <p><img src="./Img/logo2.svg" alt="logo" /></p>
         <p><img src="./Img/logo3.svg" alt="logo" /></p>
         <p><img src="./Img/logo4.svg" alt="logo" /></p>
-      </section>
-      <section class="blog">
+      </div>
+
+      <!-- Четвертая секция: Blog -->
+
+      <div class="blog">
         <div class="blog-image">
-          <img src="./Img/about 4.svg" alt="ai" width="632px" height="634px" />
+          <img src="./Img/about4.svg" alt="ai" width="632" height="634" />
         </div>
         <div class="blog-description">
           <p class="blog-description-text">
@@ -84,9 +87,86 @@
           </p>
           <button class="blog-description-btn">Learn More</button>
         </div>
-      </section>
-       <!-- Четвертая секция -->
-      <section class="reviews">
+      </div>
+
+      <!-- Пятая секция: Corousel: Achievments -->
+
+      <div class="achievments">
+        <div class="achievments-container">
+          <div class="achievments-card">
+            <img
+              src="./Img/welcome/welcome-1.svg"
+              alt="achievment"
+              class="achievments-img"
+            />
+            <h2 class="achievments-title">
+              Naxly as the Winners in Global Agency Awards
+            </h2>
+            <p class="achievments-text">
+              Lorem ipsum is placeholder text commonly used in print, and
+              publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+          <div class="achievments-card">
+            <img
+              src="./Img/welcome/welcome-2.svg"
+              alt="achievment"
+              class="achievments-img"
+            />
+            <h2 class="achievments-title">Expert Prespective Agency Awards</h2>
+            <p class="achievments-text">
+              Lorem ipsum is placeholder text commonly used in print, and
+              publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+          <div class="achievments-card">
+            <img
+              src="./Img/welcome/welcome-3.svg"
+              alt="achievment"
+              class="achievments-img"
+            />
+            <h2 class="achievments-title">
+              Business Prespective Global Agency Awards
+            </h2>
+            <p class="achievments-text">
+              Lorem ipsum is placeholder text commonly used in print, and
+              publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+          <div class="achievments-card">
+            <img
+              src="./Img/welcome/welcome-4.svg"
+              alt="achievment"
+              class="achievments-img"
+            />
+            <h2 class="achievments-title">
+              Value for Results in Global Agency Awards
+            </h2>
+            <p class="achievments-text">
+              Lorem ipsum is placeholder text commonly used in print, and
+              publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+          <div class="achievments-card">
+            <img
+              src="./Img/welcome/welcome-5.svg"
+              alt="achievment"
+              class="achievments-img"
+            />
+            <h2 class="achievments-title">
+              Global Experience in Agency Awards
+            </h2>
+            <p class="achievments-text">
+              Lorem ipsum is placeholder text commonly used in print, and
+              publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Шестая секция: Reviews -->
+
+      <div class="reviews">
         <div class="reviews-description">
           <p class="reviews-description-text">
             What our clients say about our awesome solutions
@@ -112,12 +192,14 @@
           <img
             src="./Img/about3.svg"
             alt="it-scientist"
-            width="642px"
-            height="551px"
+            width="642"
+            height="551"
           />
         </div>
-      </section>
-       <!-- Футер -->
+      </div>
+
+      <!-- Футер -->
+
       <footer>
         <div class="contacts">
           <img src="./Img/Logo.svg" alt="logo" width="45" height="59" />
@@ -195,7 +277,8 @@
               </li>
             </ul>
             <div class="dropdown">
-               <!-- Выпадающее меню выбора языка на сайте -->
+              <!-- Выпадающее меню выбора языка на сайте -->
+
               <button class="dropbtn">Select language</button>
               <div class="dropdown-content">
                 <a href="#s">English</a>

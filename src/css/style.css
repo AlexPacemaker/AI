@@ -2,18 +2,18 @@
 @font-face {
   font-family: "OpenSans";
   src: url(../fonts/OpenSans-Light.ttf);
-  font-weight: regular;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Open Sans";
   src: url(../fonts/OpenSans-Bold.ttf);
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 html {
   font-family: "Open Sans", sans-serif;
-  font-weight: regular;
   scroll-behavior: smooth;
 }
 html a {
@@ -138,7 +138,6 @@ html a {
   line-height: 160%;
   font-size: 18px;
   margin-bottom: 40px;
-  font-weight: 600px;
   opacity: 0.7;
 }
 .main-container #about .about-description-btns {
@@ -147,8 +146,9 @@ html a {
   align-items: flex-start;
   margin-left: 128px;
   text-align: center;
+  transition: 0.3s ease-in-out;
 }
-.main-container #about .about-description-btns button {
+.main-container #about .about-description-btns a {
   width: 171px;
   height: 57px;
   background-color: #3a68b8;
@@ -156,21 +156,52 @@ html a {
   font-size: 20px;
   color: #ffffff;
   margin-right: 20px;
+  padding-top: 20px;
   padding-bottom: 9px;
 }
-.main-container #about .about-description-btns button:last-child {
+.main-container #about .about-description-btns a:last-child {
   width: 217px;
   height: 57px;
   margin-right: 0;
+  padding-top: 0;
   padding-bottom: 9px;
 }
-.main-container #about .about-description-btns button:hover {
+.main-container #about .about-description-btns a:hover {
   cursor: pointer;
   box-shadow: 0 0 5px 2px grey;
+}
+.main-container #about .about-description-btns a:active {
+  transform: translateY(5px);
+  transition: 0.3s ease-in-out;
 }
 .main-container #about .about-description-play {
   position: absolute;
   left: 205px;
+}
+.main-container #about .watch_video {
+  background-color: #3a68b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+}
+.main-container #about .watch_video-text {
+  background-color: #3a68b8;
+  padding-top: 20px;
+  margin-left: 20px;
+}
+.main-container #about .triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 22px solid white;
+  transform: rotate(90deg);
+  background-color: #3a68b8;
+  position: absolute;
+  top: 18px;
+  left: 20px;
 }
 .main-container .about-image {
   margin-bottom: 89px;
@@ -205,13 +236,14 @@ html a {
   width: 1400px;
   margin: 0 auto;
   display: flex;
+  margin-bottom: 170px;
+  transition: 0.3s ease-in-out;
 }
 .main-container .blog-image {
   transition: 0.7s ease-in-out;
   width: 725px;
   height: 669px;
   margin-right: 68px;
-  margin-bottom: 200px;
 }
 .main-container .blog-image:hover {
   transform: translateY(-10px) translateX(10px);
@@ -241,6 +273,57 @@ html a {
   padding: 15px 30px;
   border-radius: 5px;
   background-color: #3a68b8;
+}
+.main-container .blog-description-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px grey;
+}
+.main-container .blog-description-btn:active {
+  transform: translateY(5px);
+  transition: 0.3s ease-in-out;
+}
+.main-container .achievments {
+  margin-bottom: 170px;
+}
+.main-container .achievments .achievments-container {
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+.main-container .achievments .achievments-container .achievments-card {
+  width: 322px;
+  height: 359px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  padding: 15px;
+  transition: 0.5s ease-in-out;
+}
+.main-container .achievments .achievments-container .achievments-card:hover {
+  border-radius: 15px;
+  box-shadow: 0 0 15px 5px #3a68b8;
+  cursor: pointer;
+  transform: translateY(-8px);
+  transition: 0.5s ease-in-out;
+}
+.main-container .achievments .achievments-container .achievments-card .achievments-img {
+  width: 88px;
+  height: 93px;
+  margin-left: 72px;
+  margin-bottom: 40px;
+}
+.main-container .achievments .achievments-container .achievments-card .achievments-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  opacity: 0.7;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.main-container .achievments .achievments-container .achievments-card .achievments-text {
+  text-align: center;
+  opacity: 0.7;
 }
 .main-container .reviews {
   width: 1146px;
@@ -387,7 +470,7 @@ html a {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* Стили для контейнера с выпадающим меню */
